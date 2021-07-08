@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+ </head>
+  <link href="/styles/general.css" rel="stylesheet" type="text/css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Twiterx</title>
+ <head>
+ <body class="body">
+    <div>
+    <form action="/register" method="POST" autocomplete="off" class="container container-sizeReg">
+        <label class="labelMain">Registrarme en Twiterx©</label>
+        <label for="user" class="label">Usuario</label>
+        <input type="text" name="user" class="inputText" value="<%= form.user %>" required>
+        <label for="userName" class="label">Nombre completo</label>
+        <input type="text" name="username" class="inputText" value="<%= form.username %>" required>
+        <label for="email" class="label">Correo</label>
+        <input type="email" name="email" id="correo" class="inputText" value="<%= form.email %>" required>
+        <label for="pass" class="label">Contraseña</label>
+        <input type="password" name="password" id="password" class="inputText" value="<%= form.password %>" required>
+        <label for="passC" class="label">Confirme contraseña</label>
+        <input type="password" name="passwordC" class="inputText" value="<%= form.passwordC %>" required>
+        <input type="submit" value="Registrar" class="button">
+        
+        <% if (msgError.length > 0){ %>
+        <div class="divError"><%= msgError %></div>
+        <%}%>
+        <div class="link">
+          <a href="./login" >Login</a>
+        </div>
+    </form>
+    </div> 
+ </body> 
+</html>

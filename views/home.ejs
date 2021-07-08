@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+ </head>
+  <link href="/styles/general.css" rel="stylesheet" type="text/css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Twiterx</title>
+ <head>
+ <body class="bodyHome">
+     <header class="header">
+        <label class="labelMain labelHeader">Twiterx©</label>
+        <form action="/home/logout" method="GET" >
+          <input type="submit" value="Cerrar sesión" class="button buttonLogout">
+        </form>
+     </header>
+    <div class="divContentMain">
+     <div class="divContentA">
+        <div class="divTxtA">@<%= user %>:</div>
+        <form action="/home" method="POST">
+         <textarea id="txtPost" name="texto" rows="8" cols="1" class="txtArea" maxlength="250"></textarea>
+         <div class="divTxtA divTxtB">
+          <input type="submit" value="Compartir" class="button buttonPost"> 
+        </div> 
+       </form>
+     </div>
+     <div class="divContentB">
+
+      <% for (var i = 0; i < tweets.length; i++) { %>
+
+        <div class="divTxtA divPostA">
+            <div class="divUsuario">@<%= tweets[i].usuario %></div>
+            <div class="divFecha"><%= tweets[i].fecha %></div>
+        </div>
+        <div class="divPostB"><%= tweets[i].texto %></div>
+
+       <% } %>
+
+      </div>
+    </div> 
+ </body>   
+</html>
